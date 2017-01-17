@@ -53,7 +53,7 @@
             let speed = layer.speed + disk.speed + driver.speed
             let burst = layer.burst
 
-            let url = encodeURI("http://chart.apis.google.com/chart?cht=r&chxt=x,y&chds=0,10&chco=FF0000&chd=t:" + attack + "," + defense + "," + stamina + "," + weight + "," + speed + "," + burst + "," + attack + "&chls=2&chm=B,FF000020,0,0,0&chxl=1:|0|2.5|5|7.5|10|0:|攻撃力|防御力|持久力|重量|機動力|バースト力&chs=480x480")
+            let url = encodeURI("http://chart.apis.google.com/chart?cht=r&chxt=x,y&chds=0,10&chco=FF0000&chd=t:" + attack + "," + defense + "," + stamina + "," + weight + "," + speed + "," + burst + "," + attack + "&chls=2&chm=B,FF000020,0,0,0&chxl=1:|0|2.5|5|7.5|10|0:|攻撃力|防御力|持久力|重量|機動力|バースト力&chs=320x320")
 
             console.log(url)
             return url
