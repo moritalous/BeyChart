@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>Hello Riot.</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+
+<body>
+    <!-- place the custom tag anywhere inside the body -->
+    <Layer></Layer><br />
+    <Disk></Disk><br />
+    <Driver></Driver><br />
+    <RadarChart></RadarChart>
+    <!-- include the tag -->
+    <script type="riot/tag" src="sample.tag"></script>
+    <!-- include riot.js -->
+    <script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>
+    <!-- mount the tag -->
+    <script>
+        fetch('data/Bey.json')
+            .then(function(data) {
+                return data.json()
+            })
+            .then(function(json) {
+
+                console.log(json.Layer)
+
+                riot.mount('Layer', json.Layer)
+                riot.mount('Disk', json.Disk)
+                riot.mount('Driver', json.Driver)
+                riot.mount('RadarChart', json)
+            })
+    </script>
+</body>
+
+</html>
