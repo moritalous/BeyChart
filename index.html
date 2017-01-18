@@ -12,15 +12,27 @@
 </head>
 
 <body>
-    <!-- place the custom tag anywhere inside the body -->
-    <Layer></Layer><br />
-    <Disk></Disk><br />
-    <Driver></Driver><br />
-    <RadarChart></RadarChart>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">ベイブレード</span>
+
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="page-content" style="padding: 16px">
+                <!-- place the custom tag anywhere inside the body -->
+                <RadarChart></RadarChart>
+            </div>
+        </main>
+    </div>
+
     <!-- include the tag -->
-    <script type="riot/tag" src="sample.tag"></script>
+    <script type="riot/tag" src="bey.tag"></script>
     <!-- include riot.js -->
-    <script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.0.7/riot+compiler.js"></script>
     <!-- mount the tag -->
     <script>
         fetch('data/Bey.json')
@@ -28,12 +40,6 @@
                 return data.json()
             })
             .then(function(json) {
-
-                console.log(json.Layer)
-
-                riot.mount('Layer', json.Layer)
-                riot.mount('Disk', json.Disk)
-                riot.mount('Driver', json.Driver)
                 riot.mount('RadarChart', json)
             })
     </script>
