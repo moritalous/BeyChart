@@ -1,0 +1,33 @@
+{
+    "Layer": {
+        "victory_valkyrie": { "name": "ビクトリーヴァルキリー", "type": "アタックタイプ", "attack": 4, "defense": 0, "stamina": 0, "weight": 1, "speed": 2, "burst": 4 },
+        "X_excalibur": { "name": "ゼノエクスカリバー", "type": "アタックタイプ", "attack": 5, "defense": 0, "stamina": 0, "weight": 1, "speed": 0, "burst": 5 },
+        "Fang": { "name": "ファングフェンリル", "type": "アタックタイプ", "attack": 4, "defense": 2, "stamina": 1, "weight": 2, "speed": 0, "burst": 2 },
+        "phantom": { "name": "サイキックファントム", "type": "スタミナタイプ", "attack": 0, "defense": 2, "stamina": 3, "weight": 3, "speed": 1, "burst": 2 },
+        "wild_wyvern": { "name": "ワイルドワイバーン", "type": "ディフェンスタイプ", "attack": 1, "defense": 3, "stamina": 1, "weight": 3, "speed": 1, "burst": 2 },
+        "kaiser_kerbeus": { "name": "カイザーケルベウス", "type": "ディフェンスタイプ", "attack": 0, "defense": 4, "stamina": 1, "weight": 2, "speed": 2, "burst": 2 },
+        "dark_deathsizer": { "name": "ダークデスサイザー", "type": "アタックタイプ", "attack": 3, "defense": 0, "stamina": 2, "weight": 2, "speed": 1, "burst": 3 },
+        "OB_odin": { "name": "オベリスクオーディン", "type": "アタックタイプ", "attack": 4, "defense": 1, "stamina": 0, "weight": 3, "speed": 0, "burst": 3 },
+        "Longinus": { "name": "ロストロンギヌス", "type": "アタックタイプ", "attack": 3, "defense": 0, "stamina": 0, "weight": 5, "speed": 0, "burst": 4 }
+    },
+    "Disk": {
+        "boost": { "name": "ブースト", "attack": 0, "defense": 0, "stamina": 0, "weight": 1, "speed": 4, "initial": "B" },
+        "Magnum": { "name": "マグナム", "attack": 3, "defense": 0, "stamina": 0, "weight": 2, "speed": 0, "initial": "M" },
+        "oval": { "name": "オーバル", "attack": 1, "defense": 0, "stamina": 0, "weight": 2, "speed": 1, "initial": "O" },
+        "Infinity": { "name": "インフィニティ", "attack": 0, "defense": 1, "stamina": 2, "weight": 1, "speed": 0, "initial": "I" },
+        "down": { "name": "ダウン", "attack": 0, "defense": 2, "stamina": 2, "weight": 0, "speed": 0, "initial": "D" },
+        "force": { "name": "フォース", "attack": 2, "defense": 0, "stamina": 0, "weight": 1, "speed": 1, "initial": "F" },
+        "triple": { "name": "トリプル", "attack": 1, "defense": 1, "stamina": 0, "weight": 1, "speed": 1, "initial": "T" },
+        "Nine": { "name": "ナイン", "attack": 0, "defense": 0, "stamina": 0, "weight": 2, "speed": 2, "initial": "N" }
+    },
+    "Driver": {
+        "variable": { "name": "ヴァリアブル", "type": "アタックタイプ", "attack": 2, "defense": 1, "stamina": 0, "weight": 0, "speed": 3, "initial": "V" },
+        "Impact": { "name": "インパクト", "type": "アタックタイプ", "attack": 2, "defense": 0, "stamina": 1, "weight": 0, "speed": 3, "initial": "I" },
+        "jaggy": { "name": "ジャギー", "type": "アタックタイプ", "attack": 1, "defense": 0, "stamina": 0, "weight": 0, "speed": 4, "initial": "J" },
+        "weight": { "name": "ウエイト", "type": "スタミナ", "attack": 0, "defense": 0, "stamina": 3, "weight": 3, "speed": 0, "initial": "W" },
+        "Eel": { "name": "イールディング", "type": "スタミナ", "attack": 0, "defense": 1, "stamina": 4, "weight": 0, "speed": 1, "initial": "Y" },
+        "orbit": { "name": "オービット", "type": "ディフェンスタイプ", "attack": 0, "defense": 3, "stamina": 2, "weight": 0, "speed": 0, "initial": "O" },
+        "extreme": { "name": "エクストリーム", "type": "アタックタイプ", "attack": 2, "defense": 0, "stamina": 0, "weight": 0, "speed": 4, "initial": "X" },
+        "spiral": { "name": "スパイラル", "type": "アタック", "attack": 4, "defense": 0, "stamina": 0, "weight": 0, "speed": 2, "initial": "Sp" }
+    }
+}
