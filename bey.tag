@@ -1,29 +1,49 @@
 <Layer>
-    <p class="mdl-textfield__input">レイヤー</p>
+    <p class="mdl-textfield">レイヤー</p>
+
     <select class="mdl-textfield__input" id="layer-select">
       <option  each="{ opt, key in opts }" value="{key}">{opt.name}</option>
   </select>
+    <br>
 </Layer>
 
 <Disk>
-    <p class="mdl-textfield__input">ディスク</p>
+    <p class="mdl-textfield">ディスク</p>
     <select class="mdl-textfield__input" id="disk-select">
       <option  each="{ opt, key in opts }" value="{key}">{opt.name}</option>
   </select>
+    <br>
 </Disk>
 
 <Driver>
-    <p class="mdl-textfield__input">ドライバー</p>
+    <p class="mdl-textfield">ドライバー</p>
     <select class="mdl-textfield__input" id="driver-select">
       <option  each="{ opt, key in opts }" value="{key}">{opt.name}</option>
-  </select>
+    </select>
+    <br>
 </Driver>
 
 <RadarChart>
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick={f1}>けってい</button><br>
-    <img id="chart">
+    <Layer></Layer>
 
+    <Disk></Disk>
+    <Driver></Driver>
+    </div>
+    <div style="text-align: center">
+        <br>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width: 50%" onclick={f1}>けってい</button><br>
+        <br>
+        <img id="chart">
+
+    </div>
     <script>
+        this.on('mount', function() {
+            riot.mount('Layer', opts.Layer)
+            riot.mount('Disk', opts.Disk)
+            riot.mount('Driver', opts.Driver)
+        })
+
+
         f1(e) {
             let layerValue = document.getElementById('layer-select').value
             let diskValue = document.getElementById('disk-select').value
@@ -41,11 +61,6 @@
         }
 
         function f2(layer, disk, driver) {
-
-            console.log(layer)
-            console.log(disk)
-            console.log(driver)
-
             let attack = layer.attack + disk.attack + driver.attack
             let defense = layer.defense + disk.defense + driver.defense
             let stamina = layer.stamina + disk.stamina + driver.stamina

@@ -1,0 +1,25 @@
+{
+    "name": "BeyChart",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "http-server -o"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/moritalous/BeyChart.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/moritalous/BeyChart/issues"
+    },
+    "homepage": "https://github.com/moritalous/BeyChart#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "http-server": "^0.9.0"
+    }
+}
