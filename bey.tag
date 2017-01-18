@@ -1,5 +1,5 @@
 <Layer>
-    <p class="mdl-textfield">レイヤー</p>
+    <p class="mdl-typography--title">レイヤー</p>
 
     <select class="mdl-textfield__input" id="layer-select">
       <option  each="{ opt, key in opts }" value="{key}">{opt.name}</option>
@@ -8,17 +8,17 @@
 </Layer>
 
 <Disk>
-    <p class="mdl-textfield">ディスク</p>
+    <p class="mdl-typography--title">ディスク</p>
     <select class="mdl-textfield__input" id="disk-select">
-      <option  each="{ opt, key in opts }" value="{key}">{opt.name}</option>
+      <option  each="{ opt, key in opts }" value="{key}">[{opt.initial}] {opt.name}</option>
   </select>
     <br>
 </Disk>
 
 <Driver>
-    <p class="mdl-textfield">ドライバー</p>
+    <p class="mdl-typography--title">ドライバー</p>
     <select class="mdl-textfield__input" id="driver-select">
-      <option  each="{ opt, key in opts }" value="{key}">{opt.name}</option>
+      <option  each="{ opt, key in opts }" value="{key}">[{opt.initial}] {opt.name}</option>
     </select>
     <br>
 </Driver>
@@ -33,6 +33,7 @@
         <br>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width: 50%" onclick={f1}>けってい</button><br>
         <br>
+        <h6 class="mdl-typography--title"><label id="CustomBeyName"></label></h6>
         <img id="chart">
 
     </div>
@@ -52,6 +53,8 @@
             let selectedLayer = opts.Layer[layerValue]
             let selectedDisk = opts.Disk[diskValue]
             let selectedDriver = opts.Driver[driverValue]
+
+            document.getElementById('CustomBeyName').innerText = selectedLayer.name + '.' + selectedDisk.initial + "." + selectedDriver.initial
 
             let url = f2(selectedLayer, selectedDisk, selectedDriver)
 
