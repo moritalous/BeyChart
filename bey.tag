@@ -31,21 +31,22 @@
     </div>
     <div style="text-align: center">
         <br>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width: 50%" onclick={f1}>けってい</button><br>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width: 50%" onclick={f2}>けってい</button><br>
         <br>
         <h6 class="mdl-typography--title"><label id="CustomBeyName"></label></h6>
         <img id="chart">
-
+        <br>
+        <canvas id="chart2" , width="240" height="240"></canvas>
     </div>
     <script>
         this.on('mount', function() {
             riot.mount('Layer', opts.Layer)
             riot.mount('Disk', opts.Disk)
             riot.mount('Driver', opts.Driver)
+
         })
 
-
-        f1(e) {
+        f2(e) {
             let layerValue = document.getElementById('layer-select').value
             let diskValue = document.getElementById('disk-select').value
             let driverValue = document.getElementById('driver-select').value
@@ -54,27 +55,83 @@
             let selectedDisk = opts.Disk[diskValue]
             let selectedDriver = opts.Driver[driverValue]
 
-            document.getElementById('CustomBeyName').innerText = selectedLayer.name + '.' + selectedDisk.initial + "." + selectedDriver.initial
+            let name = selectedLayer.name + '.' + selectedDisk.initial + "." + selectedDriver.initial
+            document.getElementById('CustomBeyName').innerText = name
 
-            let url = f2(selectedLayer, selectedDisk, selectedDriver)
+            let attack = selectedLayer.attack + selectedDisk.attack + selectedDriver.attack
+            let defense = selectedLayer.defense + selectedDisk.defense + selectedDriver.defense
+            let stamina = selectedLayer.stamina + selectedDisk.stamina + selectedDriver.stamina
+            let weight = selectedLayer.weight + selectedDisk.weight + selectedDriver.weight
+            let speed = selectedLayer.speed + selectedDisk.speed + selectedDriver.speed
+            let burst = selectedLayer.burst
 
-            document.getElementById('chart').src = url
+            var ctx = document.getElementById("chart2").getContext("2d");
 
-            return
+            var data = {
+                // ||||||&
+                labels: ["攻撃力", "防御力", "持久力", "重量", "機動力", "バースト力"],
+                datasets: [{
+                    label: name,
+                    backgroundColor: "rgba(179,181,198,0.2)",
+                    borderColor: "rgba(179,181,198,1)",
+                    pointBackgroundColor: "rgba(179,181,198,1)",
+                    pointBorderColor: "#fff",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(179,181,198,1)",
+                    data: [attack, defense, stamina, weight, speed, burst]
+                }]
+            };
+
+            new Chart(ctx, {
+                type: "radar",
+                data: data,
+                options: {
+                    scale: {
+                        ticks: {
+                            beginAtZero: true,
+                            min: 0,
+                            max: 10,
+                            stepSize: 2
+                        },
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            });
         }
 
-        function f2(layer, disk, driver) {
-            let attack = layer.attack + disk.attack + driver.attack
-            let defense = layer.defense + disk.defense + driver.defense
-            let stamina = layer.stamina + disk.stamina + driver.stamina
-            let weight = layer.weight + disk.weight + driver.weight
-            let speed = layer.speed + disk.speed + driver.speed
-            let burst = layer.burst
+        // f1(e) {
 
-            let url = encodeURI("http://chart.apis.google.com/chart?cht=r&chxt=x,y&chds=0,10&chco=FF0000&chd=t:" + attack + "," + defense + "," + stamina + "," + weight + "," + speed + "," + burst + "," + attack + "&chls=2&chm=B,FF000020,0,0,0&chxl=1:|0|2.5|5|7.5|10|0:|攻撃力|防御力|持久力|重量|機動力|バースト力&chs=320x320")
+        //     let layerValue = document.getElementById('layer-select').value
+        //     let diskValue = document.getElementById('disk-select').value
+        //     let driverValue = document.getElementById('driver-select').value
 
-            console.log(url)
-            return url
-        }
+        //     let selectedLayer = opts.Layer[layerValue]
+        //     let selectedDisk = opts.Disk[diskValue]
+        //     let selectedDriver = opts.Driver[driverValue]
+
+        //     document.getElementById('CustomBeyName').innerText = selectedLayer.name + '.' + selectedDisk.initial + "." + selectedDriver.initial
+
+        //     let url = f2(selectedLayer, selectedDisk, selectedDriver)
+
+        //     document.getElementById('chart').src = url
+
+        //     return
+        // }
+
+        // function f2(layer, disk, driver) {
+        //     let attack = layer.attack + disk.attack + driver.attack
+        //     let defense = layer.defense + disk.defense + driver.defense
+        //     let stamina = layer.stamina + disk.stamina + driver.stamina
+        //     let weight = layer.weight + disk.weight + driver.weight
+        //     let speed = layer.speed + disk.speed + driver.speed
+        //     let burst = layer.burst
+
+        //     let url = encodeURI("http://chart.apis.google.com/chart?cht=r&chxt=x,y&chds=0,10&chco=FF0000&chd=t:" + attack + "," + defense + "," + stamina + "," + weight + "," + speed + "," + burst + "," + attack + "&chls=2&chm=B,FF000020,0,0,0&chxl=1:|0|2.5|5|7.5|10|0:|攻撃力|防御力|持久力|重量|機動力|バースト力&chs=320x320")
+
+        //     console.log(url)
+        //     return url
+        // }
     </script>
 </RadarChart>
