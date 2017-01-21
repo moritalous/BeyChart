@@ -1,7 +1,7 @@
-<Layer>
+<Layer ref="Layer">
     <p class="mdl-typography--title">レイヤー</p>
 
-    <select class="mdl-textfield__input" id="layer-select">
+    <select class="mdl-textfield__input" id="layer-select" ref="layerselect">
       <option  each="{ opt, key in opts }" value="{key}">{opt.name}</option>
   </select>
     <br>
@@ -25,7 +25,6 @@
 
 <RadarChart>
     <Layer></Layer>
-
     <Disk></Disk>
     <Driver></Driver>
     </div>
@@ -44,6 +43,9 @@
             riot.mount('Disk', opts.Disk)
             riot.mount('Driver', opts.Driver)
 
+            console.log(this.refs.Layer)
+            console.log(this.refs.layerselect)
+            console.log(this.refs)
         })
 
         f2(e) {

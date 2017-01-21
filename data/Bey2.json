@@ -13,7 +13,7 @@
     "Disk": {
         "boost": { "name": "ブースト", "attack": 0, "defense": 0, "stamina": 0, "weight": 1, "speed": 4, "initial": "B" },
         "Magnum": { "name": "マグナム", "attack": 3, "defense": 0, "stamina": 0, "weight": 2, "speed": 0, "initial": "M" },
-        "oval": { "name": "オーバル", "attack": 1, "defense": 0, "stamina": 0, "weight": 2, "speed": 1, "initial": "O" },
+        "Polish": { "name": "ポリッシュ", "attack": 0, "defense": 1, "stamina": 3, "weight": 1, "speed": 0, "initial": "P" },
         "Infinity": { "name": "インフィニティ", "attack": 0, "defense": 1, "stamina": 2, "weight": 1, "speed": 0, "initial": "I" },
         "down": { "name": "ダウン", "attack": 0, "defense": 2, "stamina": 2, "weight": 0, "speed": 0, "initial": "D" },
         "force": { "name": "フォース", "attack": 2, "defense": 0, "stamina": 0, "weight": 1, "speed": 1, "initial": "F" },
